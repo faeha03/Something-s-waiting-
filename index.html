@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Little Princess 💗</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  height:100vh;
+  overflow:hidden;
+}
+
+.slide{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:25px;
+  opacity:0;
+  transform:scale(0.95);
+  transition:all 0.7s ease;
+  pointer-events:none;
+  z-index:0;
+}
+
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+  pointer-events:auto;
+  z-index:10;
+}
+
+h1{
+  font-size:2.2rem;
+  color:#fff;
+  margin-bottom:20px;
+}
+
+p{
+  color:#fff;
+  font-size:1.1rem;
+  line-height:1.6;
+  max-width:520px;
+}
+
+button{
+  margin-top:30px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#fff;
+  color:#ff5f7e;
+  font-size:1rem;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.08);
+  background:#ffe6ec;
+}
+
+.heart{
+  font-size:3rem;
+  margin-bottom:15px;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide active">
+  <div class="heart">💖</div>
+  <h1>Hey My Little Princess</h1>
+  <p>
+    Today is Purpose Day…  
+    and my heart only knows one direction.  
+    It always leads to you.
+  </p>
+  <button onclick="nextSlide()">Tap gently 🫶</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+  <h1>You Are My Purpose</h1>
+  <p>
+    Not because I need you…  
+    but because I *choose* you.  
+    Every day. Every version of me.
+  </p>
+  <button onclick="nextSlide()">Keep going 💗</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+  <h1>I Love You</h1>
+  <p>
+    I love the way you exist so softly,  
+    yet change everything around you.  
+    Loving you feels natural.
+  </p>
+  <button onclick="nextSlide()">Say it again 🥺</button>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+  <h1>This Button Means Something</h1>
+  <p>
+    It means comfort.  
+    It means warmth.  
+    It means letting someone care deeply for you.
+  </p>
+  <button onclick="nextSlide()">I trust you 🌷</button>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide">
+  <h1>With You…</h1>
+  <p>
+    I don’t want perfection.  
+    I don’t want rushing.  
+    I just want honesty, effort, and us.
+  </p>
+  <button onclick="nextSlide()">That sounds nice 💞</button>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide">
+  <h1>I Love You Because…</h1>
+  <p>
+    You feel like home.  
+    You feel like peace.  
+    You feel like someone worth choosing again and again.
+  </p>
+  <button onclick="nextSlide()">My heart feels this 💓</button>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide">
+  <h1>So Here I Am…</h1>
+  <p>
+    With respect.  
+    With affection.  
+    And with a question that comes from love, not pressure.
+  </p>
+  <button onclick="nextSlide()">Okay… ask 💌</button>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide">
+  <div class="heart">❤️</div>
+  <h1>Will You Be My Valentine?</h1>
+  <p>
+    Not just for a day…  
+    but for the laughter, the care,  
+    and the small moments that matter.
+  </p>
+  <button onclick="nextSlide()">I’m listening 💖</button>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide">
+  <h1>No Matter Your Answer</h1>
+  <p>
+    I’m grateful for you.  
+    For your presence.  
+    For letting me feel something this real.
+  </p>
+  <button onclick="nextSlide()">Read the last one 🥹</button>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide">
+  <div class="heart">💘</div>
+  <h1>I Love You</h1>
+  <p>
+    Softly.  
+    Respectfully.  
+    Completely.
+  </p>
+  <button onclick="restart()">Start again 🔁</button>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function nextSlide(){
+  slides[current].classList.remove("active");
+  current++;
+  if(current >= slides.length) current = slides.length - 1;
+  slides[current].classList.add("active");
+}
+
+function restart(){
+  slides[current].classList.remove("active");
+  current = 0;
+  slides[current].classList.add("active");
+}
+</script>
+
+</body>
+</html>
